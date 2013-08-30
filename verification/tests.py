@@ -24,7 +24,7 @@ TESTS = {
             "answer": "http://www.checkio.org/task_1"
         },
         {
-            "input": "http://www.checkio.org:8080/home/",
+            "input": "http://www.checkio.org:80/home/",
             "answer": "http://www.checkio.org/home"
         },
         {
@@ -35,14 +35,14 @@ TESTS = {
     ],
     "2.Complex": [
         {
-            "input": "HTTP://EXAMPLE.COM:9000",
+            "input": "HTTP://EXAMPLE.COM:80",
             "answer": "http://example.com",
             "explanation": [
                 "HTTP://EXAMPLE.COM"
             ]
         },
         {
-            "input": "http://Example.com:81/%48%6f%6d%45",
+            "input": "http://Example.com:80/%48%6f%6d%45",
             "answer": "http://example.com/home",
             "explanation": [
                 "http://Example.com/%48%6f%6d%45",
@@ -57,10 +57,10 @@ TESTS = {
             ]
         },
         {
-            "input": "http://example.com:90/HOME/../././Guest/1/../2/..",
+            "input": "http://example.com:80/HOME/../././Guest/1/../2/..",
             "answer": "http://example.com/guest",
             "explanation": [
-                "http://example.com:90/Guest",
+                "http://example.com:80/Guest",
                 "http://example.com:/Guest"
             ]
         }
@@ -68,13 +68,13 @@ TESTS = {
     ],
     "3. All together.": [
         {
-            "input": "https://Www.Checkio.org:8080/ta%73K%2d/1/../2/./%3f%3e",
-            "answer": "https://www.checkio.org/task-/2/%3F%3E",
+            "input": "http://Www.Checkio.org:80/ta%73K%2d/1/../2/./%3f%3e",
+            "answer": "http://www.checkio.org/task-/2/%3F%3E",
             "explanation": [
-                "https://Www.Checkio.org:8080/ta%73K%2d/2/%3f%3e",
-                "https://Www.Checkio.org:8080/tasK-/2/%3f%3e",
-                "https://Www.Checkio.org/tasK-/2/%3f%3e",
-                "https://Www.Checkio.org/tasK-/2/%3F%3E"
+                "http://Www.Checkio.org:80/ta%73K%2d/2/%3f%3e",
+                "http://Www.Checkio.org:80/tasK-/2/%3f%3e",
+                "http://Www.Checkio.org/tasK-/2/%3f%3e",
+                "http://Www.Checkio.org/tasK-/2/%3F%3E"
             ]
         }
     ]
