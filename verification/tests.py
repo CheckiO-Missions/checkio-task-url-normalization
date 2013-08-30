@@ -9,28 +9,52 @@ Each test is dict with
 
 
 TESTS = {
-    "Basics": [
+    "1.Simple": [
         {
-            "input": [3, 2],
-            "answer": 5,
-            "explanation": "3+2=?"
+            "input": "Http://Www.Checkio.org",
+            "answer": "http://www.checkio.org"
+
         },
         {
-            "input": [5, 7],
-            "answer": 12,
-            "explanation": "5+7=?"
+            "input": "http://www.checkio.org/%cc%b1bac",
+            "answer": "http://www.checkio.org/%CC%B1bac"
+        },
+        {
+            "input": "http://www.checkio.org/task%5F%31",
+            "answer": "http://www.checkio.org/task_1"
+        },
+        {
+            "input": "http://www.checkio.org:8080/home/",
+            "answer": "http://www.checkio.org/home"
+        },
+        {
+            "input": "http://www.checkio.org/task/./1/../2/././name",
+            "answer": "http://www.checkio.org/task/2/name"
         }
+
     ],
-    "Extra": [
+    "2.Complex": [
         {
-            "input": [6, 3],
-            "answer": 9,
-            "explanation": "6+3=?"
+            "input": "HTTP://EXAMPLE.COM:9000",
+            "answer": "http://example.com",
+            "explanation": [
+                "HTTP://EXAMPLE.COM"
+            ]
         },
         {
-            "input": [6, 7],
-            "answer": 13,
-            "explanation": "6+7=?"
-        }
+            "input": "http://Example.com:81/%48%6f%6d%45",
+            "answer": "http://example.com/home",
+            "explanation": [
+                "http://Example.com/%48%6f%6d%45",
+                "http://Example.com/HomE",
+            ]
+        },
+        {
+            "input": "http://example.com/%31%30%2D%2f%2E%1f%5F%7E",
+            "answer": "http://example.com/10-%2F.%1F_~",
+            "explanation": [
+                "http://example.com/10-%2f.%1f_~",
+            ]
+        },
     ]
 }
