@@ -73,8 +73,9 @@
     <p>
         <strong>Example:</strong>
     </p>
-    <pre class="brush: python">
-checkio(3, 2) == 5
-checkio(5, 7) == 12
-    </pre>
+    <pre class="brush: python">checkio("Http://Www.Checkio.org") == "http://www.checkio.org"
+checkio("http://www.checkio.org/%cc%b1bac") == "http://www.checkio.org/%CC%B1bac"
+checkio("http://www.checkio.org/task%5F%31") == "http://www.checkio.org/task_1"
+checkio("http://www.checkio.org:8080/home/") == "http://www.checkio.org/home"
+checkio("http://www.checkio.org/task/./1/../2/././name") == "http://www.checkio.org/task/2/name"</pre>
 </div>
