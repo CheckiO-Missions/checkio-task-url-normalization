@@ -43,16 +43,9 @@
         <pre>http://www.example.com:80/bar.html → http://www.example.com/bar.html</pre>
     </li>
     <li>
-        5. Adding trailing /. Directories are indicated with a trailing slash and should be included in URLs.
-        <pre>http://www.example.com/alice → http://www.example.com/alice/</pre>
-        However, there is no way to know if a URL path component represents a directory or not.
-        So we will decide if last component of url contains a dot with extension (Ex: .html or .asp), then it's not a
-        directory.
-    </li>
-    <li>
-        6. Removing dot-segments. The segments “..” and “.” can be removed from a URL according to the algorithm
+        5. Removing dot-segments. The segments “..” and “.” can be removed from a URL according to the algorithm
         described in RFC 3986 (or a similar algorithm). ".." is a parent directory, "." is the same directory.
-        <pre>http://www.example.com/../a/b/../c/./d.html → http://www.example.com/a/c/d.html</pre>
+        <pre>http://www.example.com/a/b/../c/./d.html → http://www.example.com/a/c/d.html</pre>
     </li>
 </ul>
 </div>
