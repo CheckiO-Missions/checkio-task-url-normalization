@@ -56,5 +56,26 @@ TESTS = {
                 "http://example.com/10-%2f.%1f_~",
             ]
         },
+        {
+            "input": "http://example.com:90/HOME/../././Guest/1/../2/..",
+            "answer": "http://example.com/guest",
+            "explanation": [
+                "http://example.com:90/Guest",
+                "http://example.com:/Guest"
+            ]
+        }
+
+    ],
+    "3. All together.": [
+        {
+            "input": "https://Www.Checkio.org:8080/ta%73K%2d/1/../2/./%3f%3e",
+            "answer": "https://www.checkio.org/task-/2/%3F%3E",
+            "explanation": [
+                "https://Www.Checkio.org:8080/ta%73K%2d/2/%3f%3e",
+                "https://Www.Checkio.org:8080/tasK-/2/%3f%3e",
+                "https://Www.Checkio.org/tasK-/2/%3f%3e",
+                "https://Www.Checkio.org/tasK-/2/%3F%3E"
+            ]
+        }
     ]
 }
