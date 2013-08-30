@@ -1,29 +1,82 @@
+<style>
+    pre {
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+</style>
 <p>
-    <i>( Describe task in general )</i>
-</p>
-
-<p>
-    Sum two passed ints
-</p>
-
-<p style="text-align: center;">
-    <img class="for_info_only" title="example" src="{{MEDIA}}example.png" alt="example" width="392px"/>
-    <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
-</p>
-
-<p><i>( Explain input and output values )</i></p>
-<p>
-    <strong>Input: </strong> Two arguments. Both are int
+    URL normalization is the process by which URLs are modified and standardized in a
+    consistent manner. The goal of the normalization process is to transform a URL into a normalized or canonical URL so
+    it is possible to determine if two syntactically different URLs may be equivalent.
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    For our normalization we will use normalizations that preserve semantics and that usually preserve semantics.
+    You should normalize a given url with using the next rules.
 </p>
 
+<div>
+    <strong>Normalization Rules:</strong>
+
+<ul>
+    <li>
+        1. Converting the scheme and host to lower case.
+        <pre>HTTP://www.Example.com/ → http://www.example.com/</pre>
+    </li>
+    <li>
+        2. Capitalizing letters in escape sequences.
+        All letters within a percent-encoding triplet (e.g., "%3B") are case-insensitive, and should be capitalized.
+        <pre>http://www.example.com/a%c2%b1b → http://www.example.com/a%C2%B1b</pre>
+    </li>
+    <li>
+        3. Decoding percent-encoded octets of unreserved characters. For consistency, percent-encoded octets in the
+        ranges
+        of <strong>ALPHA (%41–%5A and %61–%7A), DIGIT (%30–%39), hyphen (%2D), period (%2E), underscore (%5F), or tilde
+        (%7E)</strong>
+        should not be created by URI producers and, when found in a URI, should be decoded to their corresponding
+        unreserved characters by URI normalizers.
+        <pre>http://www.example.com/%7Eusername/ → http://www.example.com/~username/</pre>
+    </li>
+    <li>
+        4. Removing the default port. The default port (port 80 for the “http” scheme) may be removed from (or added to)
+        a URL.
+        <pre>http://www.example.com:80/bar.html → http://www.example.com/bar.html</pre>
+    </li>
+    <li>
+        5. Adding trailing /. Directories are indicated with a trailing slash and should be included in URLs.
+        <pre>http://www.example.com/alice → http://www.example.com/alice/</pre>
+        However, there is no way to know if a URL path component represents a directory or not.
+        So we will decide if last component of url contains a dot with extension (Ex: .html or .asp), then it's not a
+        directory.
+    </li>
+    <li>
+        6. Removing dot-segments. The segments “..” and “.” can be removed from a URL according to the algorithm
+        described in RFC 3986 (or a similar algorithm). ".." is a parent directory, "." is the same directory.
+        <pre>http://www.example.com/../a/b/../c/./d.html → http://www.example.com/a/c/d.html</pre>
+    </li>
+</ul>
+</div>
+
+<p>
+    <strong>More info:</strong>
+    <a href="http://en.wikipedia.org/wiki/URL_normalization">Wikipedia</a>,
+    <a href="http://tools.ietf.org/html/rfc3986#page-38">RFC3986</a><br>
+
+</p>
+
+<p>
+    <strong>Precondition:</strong> All input urls are valid.
+</p>
+<p>
+    <strong>Input: </strong> URL. Unicode string.
+</p>
+
+<p>
+    <strong>Output: </strong> Normalized URL. String.
+</p>
 
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
     <p>
         <strong>Example:</strong>
     </p>
