@@ -25,7 +25,7 @@ TESTS = {
         },
         {
             "input": "http://www.checkio.org:80/home/",
-            "answer": "http://www.checkio.org/home"
+            "answer": "http://www.checkio.org/home/"
         },
         {
             "input": "http://www.checkio.org/task/./1/../2/././name",
