@@ -24,6 +24,10 @@ TESTS = {
             "answer": "http://www.checkio.org/task_1"
         },
         {
+            "input": "http://www.checkio.org:8080/home",
+            "answer": "http://www.checkio.org:8080/home"
+        },
+        {
             "input": "http://www.checkio.org:80/home/",
             "answer": "http://www.checkio.org/home/"
         },
