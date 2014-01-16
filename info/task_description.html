@@ -14,7 +14,7 @@
 
 <p>
     For our normalization we will use normalizations that preserve semantics.
-    You should normalize a given url using the next rules (only these rules).
+    You should normalize a given url using the next rules (only these rules. They are slightly different from RFC).
 </p>
 
 <div>
@@ -22,7 +22,7 @@
 
 <ul>
     <li>
-        1. Converting the scheme and host to lower case.
+        1. Converting the url to lower case (excepting letters in escape sequences).
         <pre>HTTP://www.Example.com/ → http://www.example.com/</pre>
     </li>
     <li>
