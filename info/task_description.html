@@ -35,7 +35,7 @@
         ranges
         of <strong>ALPHA (%41–%5A and %61–%7A), DIGIT (%30–%39), hyphen (%2D), period (%2E), underscore (%5F), or tilde
         (%7E)</strong>
-        should not be created by URI producers and, when found in a URI, should be decoded to their corresponding
+        should not be created by Uniform Resource Identifiers (URI) producers and, when found in a URI, should be decoded to their corresponding
         unreserved characters by URI normalizers. Don't forget about 1st rule after it.
         <pre>http://www.example.com/%7Eusername/ → http://www.example.com/~username/</pre>
     </li>
@@ -84,8 +84,8 @@ checkio("http://www.checkio.org/task/./1/../2/././name") == "http://www.checkio.
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    This concept will help you for log parsing and analytical processing.
-    URL normalization are required if you need to compare the various URL addresses.
+    This concept will help you in parsing and analytical processing.
+    URL normalization is required if you need to compare the various URL addresses or you are running a system where letter-casing is sensitive.
 </p>
 
 <p>
