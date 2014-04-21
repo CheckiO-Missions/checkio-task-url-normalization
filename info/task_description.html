@@ -22,7 +22,7 @@
 
 <ul>
     <li>
-        1. Converting the url to lower case (excepting letters in escape sequences).
+        1. Converting the scheme and host to lower case.
         <pre>HTTP://www.Example.com/ → http://www.example.com/</pre>
     </li>
     <li>
@@ -36,7 +36,7 @@
         of <strong>ALPHA (%41–%5A and %61–%7A), DIGIT (%30–%39), hyphen (%2D), period (%2E), underscore (%5F), or tilde
         (%7E)</strong>
         should not be created by Uniform Resource Identifiers (URI) producers and, when found in a URI, should be decoded to their corresponding
-        unreserved characters by URI normalizers. Don't forget about 1st rule after it.
+        unreserved characters by URI normalizers.
         <pre>http://www.example.com/%7Eusername/ → http://www.example.com/~username/</pre>
     </li>
     <li>
