@@ -67,8 +67,28 @@ TESTS = {
                 "http://example.com:80/Guest",
                 "http://example.com:/Guest"
             ]
+        },
+        {
+            "input": "http://example.com/a/b/c/d/../../",
+            "answer": "http://example.com/a/b/",
+            "explanation": [
+                "http://example.com/a/b/",
+            ]
+        },
+        {
+            "input": "http://example.com/one/two/three/four/../..",
+            "answer": "http://example.com/one/two",
+            "explanation": [
+                "http://example.com/one/two",
+            ]
+        },
+        {
+            "input": "http://example.com:80/a/b/c/d/../../../..",
+            "answer": "http://example.com",
+            "explanation": [
+                "http://example.com",
+            ]
         }
-
     ],
     "3. All together.": [
         {
